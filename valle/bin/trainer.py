@@ -801,8 +801,9 @@ def train_one_epoch(
                         params.batch_idx_train,
                     )
 
-        if params.batch_idx_train % params.valid_interval == 0:
-            evaluate()
+        # TO FIX: this evaluate() causes dist train hanging.
+        # if params.batch_idx_train % params.valid_interval == 0:
+        #     evaluate()
 
     if True:  # eval every epoch
         evaluate()
